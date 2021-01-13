@@ -1,2 +1,4 @@
 # Project exclude paths
 /target/
+/.idea/
+/2.3.1.spring_web.iml

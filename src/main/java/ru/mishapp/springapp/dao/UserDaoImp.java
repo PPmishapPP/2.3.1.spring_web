@@ -1,7 +1,5 @@
 package ru.mishapp.springapp.dao;
 
-import org.hibernate.SessionFactory;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 import ru.mishapp.springapp.models.User;
 
@@ -11,7 +9,7 @@ import javax.persistence.TypedQuery;
 import java.util.List;
 
 @Repository
-public class UserDaoImp implements UserDao{
+public class UserDaoImp implements UserDao {
 
     @PersistenceContext
     private EntityManager entityManager;

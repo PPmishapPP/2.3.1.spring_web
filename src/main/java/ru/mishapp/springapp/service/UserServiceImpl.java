@@ -11,19 +11,21 @@ import java.util.List;
 @Service
 public class UserServiceImpl implements UserService {
 
-    @Autowired
-    private UserDao userDao;
+    private final UserDao userDao;
 
-    @Transactional
-    @Override
-    public void addUser(User user) {
-        userDao.addUser(user);
+    @Autowired
+    public UserServiceImpl(UserDao userDao) {
+        this.userDao = userDao;
     }
 
     @Transactional
     @Override
-    public void updateUser(User user) {
-        userDao.updateUser(user);
+    public void saveUser(User user) {
+        if (user.getId() == null){
+            userDao.addUser(user);
+        } else {
+            userDao.updateUser(user);
+        }
     }
 
     @Transactional
